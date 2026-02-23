@@ -33,7 +33,7 @@ const userCategory = require("./Route/Category");
 const SubCategory = require("./Route/Subcategory");
 const Banner = require("./Route/Banner");
 const Product = require("./Route/Product");
-
+const favRoute = require("./Route/Fav");
 
 app.use("/api", adminRoute);
 app.use("/api/user", userRoute);
@@ -41,6 +41,7 @@ app.use("/api/category", userCategory);
 app.use("/api/SubCategory", SubCategory);
 app.use("/api/banner", Banner);
 app.use("/api/product", Product);
+app.use("/api/favorite", favRoute);
 
 const PORT = process.env.PORT || 8000;
 

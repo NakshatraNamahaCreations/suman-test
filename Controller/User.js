@@ -73,12 +73,12 @@ exports.login = async (req, res) => {
         }).select("+password");
 
         if (!user) {
-            return res.status(401).json({ success: false, message: "Invalid credentials" });
+            return res.status(401).json({ success: false, message: "Invalid Email" });
         }
 
         const ok = await bcrypt.compare(password, user.password);
         if (!ok) {
-            return res.status(401).json({ success: false, message: "Invalid credentials" });
+            return res.status(401).json({ success: false, message: "Invalid Password" });
         }
 
         // password remove pannitu response
